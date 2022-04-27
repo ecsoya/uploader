@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Configuration;
 
-import com.github.ecsoya.upload.huawei.HuaweiFileUploader;
 import com.github.ecsoya.uploader.autoconfig.UploaderAutoConfiguration;
+import com.github.ecsoya.uploader.huawei.HuaweiFileUploader;
 import com.github.ecsoya.uploader.uploader.IFileUploader;
 
 @Configuration
