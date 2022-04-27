@@ -12,9 +12,9 @@
 	<name>uploader-module-starter</name>
 	<modules>
 		<module>uploader-spring-boot-starter</module>
-		<module>huawei-uploader-spring-boot-starter</module>
+		<module>local-uploader-spring-boot-starter</module>
 		<module>tencent-uploader-spring-boot-starter</module>
 		<module>aliyun-uploader-spring-boot-starter</module>
-		<module>local-uploader-spring-boot-starter</module>
+		<module>huawei-uploader-spring-boot-starter</module>
 	</modules>
 </project>
