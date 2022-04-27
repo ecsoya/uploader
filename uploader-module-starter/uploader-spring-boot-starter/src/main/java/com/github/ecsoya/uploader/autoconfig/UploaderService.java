@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,11 +61,15 @@ public class UploaderService {
 			final InputStream inputStream = file.getInputStream();
 			final byte[] datas = file.getBytes();
 			uploadData = new UploadData();
-
-			final String name = file.getOriginalFilename();
-			if (name != null && name.indexOf(".") != -1) {
-				uploadData.setExtension(name.substring(name.lastIndexOf(".")));
+			String oname = file.getOriginalFilename();
+			String ext = null;
+			String name = randomName();
+			if (oname != null && oname.indexOf(".") != -1) {
+				ext = oname.substring(oname.lastIndexOf("."));
+			} else {
+				ext = "jpg";
 			}
+			uploadData.setExtension(ext);
 			uploadData.setFileName(name);
 			uploadData.setContentType(file.getContentType());
 			uploadData.setLength(file.getSize());
@@ -74,5 +79,9 @@ public class UploaderService {
 		} catch (final IOException e) {
 			throw new FileUploadException(e.getLocalizedMessage());
 		}
+	}
+
+	private static String randomName() {
+		return UUID.randomUUID().toString().replaceAll("-", "");
 	}
 }

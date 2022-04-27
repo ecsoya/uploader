@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.github.ecsoya.uploader</groupId>
 		<artifactId>uploader-module-core</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 	</parent>
 	<artifactId>uploader-tencent</artifactId>
 	<name>uploader-tencent</name>
