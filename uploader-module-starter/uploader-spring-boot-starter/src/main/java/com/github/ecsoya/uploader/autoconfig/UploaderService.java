@@ -12,16 +12,27 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.github.ecsoya.uploader.core.FileUploadException;
 import com.github.ecsoya.uploader.core.UploadData;
+import com.github.ecsoya.uploader.uploader.IFileUploader;
 import com.github.ecsoya.uploader.util.UploaderUtility;
 
 @Service
 public class UploaderService {
 
+	@Autowired(required = false)
+	private IFileUploader fileUploader;
+
 	@Autowired
 	private UploaderProperties config;
 
+	private IFileUploader getFileUploader() {
+		if (fileUploader != null) {
+			return fileUploader;
+		}
+		return UploaderUtility.getFileLoader(config);
+	}
+
 	public String upload(MultipartFile file) throws FileUploadException {
-		return UploaderUtility.upload(build(file), config);
+		return getFileUploader().upload(build(file), config);
 	}
 
 	public List<String> upload(List<MultipartFile> files) throws FileUploadException {
@@ -29,7 +40,7 @@ public class UploaderService {
 			return Collections.emptyList();
 		}
 		List<UploadData> datas = files.stream().map(f -> build(f)).collect(Collectors.toList());
-		return UploaderUtility.upload(datas, config);
+		return getFileUploader().upload(datas, config);
 	}
 
 	/**
