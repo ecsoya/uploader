@@ -2,8 +2,6 @@ package com.github.ecsoya.uploader.core;
 
 import java.io.InputStream;
 
-import javax.annotation.Generated;
-
 /**
  * The Class UploadData.
  */
@@ -28,15 +26,6 @@ public class UploadData {
 	private String fileName;
 
 	public UploadData() {
-	}
-
-	private UploadData(Builder builder) {
-		this.extension = builder.extension;
-		this.inputStream = builder.inputStream;
-		this.datas = builder.datas;
-		this.contentType = builder.contentType;
-		this.length = builder.length;
-		this.fileName = builder.fileName;
 	}
 
 	/**
@@ -159,58 +148,6 @@ public class UploadData {
 	 */
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
-	}
-
-	@Generated("SparkTools")
-	public static Builder builder() {
-		return new Builder();
-	}
-
-	@Generated("SparkTools")
-	public static final class Builder {
-		private String extension;
-		private InputStream inputStream;
-		private byte[] datas;
-		private String contentType;
-		private Long length;
-		private String fileName;
-
-		private Builder() {
-		}
-
-		public Builder setExtension(String extension) {
-			this.extension = extension;
-			return this;
-		}
-
-		public Builder setInputStream(InputStream inputStream) {
-			this.inputStream = inputStream;
-			return this;
-		}
-
-		public Builder setDatas(byte[] datas) {
-			this.datas = datas;
-			return this;
-		}
-
-		public Builder setContentType(String contentType) {
-			this.contentType = contentType;
-			return this;
-		}
-
-		public Builder setLength(Long length) {
-			this.length = length;
-			return this;
-		}
-
-		public Builder setFileName(String fileName) {
-			this.fileName = fileName;
-			return this;
-		}
-
-		public UploadData build() {
-			return new UploadData(this);
-		}
 	}
 
 }

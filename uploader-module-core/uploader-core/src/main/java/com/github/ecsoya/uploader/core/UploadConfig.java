@@ -1,7 +1,5 @@
 package com.github.ecsoya.uploader.core;
 
-import javax.annotation.Generated;
-
 import com.github.ecsoya.uploader.util.Utility;
 
 /**
@@ -35,17 +33,6 @@ public class UploadConfig {
 	private String uploadPath;
 
 	public UploadConfig() {
-	}
-
-	private UploadConfig(Builder builder) {
-		this.type = builder.type;
-		this.baseUrl = builder.baseUrl;
-		this.endpoint = builder.endpoint;
-		this.accessKey = builder.accessKey;
-		this.secretKey = builder.secretKey;
-		this.bucket = builder.bucket;
-		this.addDatePath = builder.addDatePath;
-		this.uploadPath = builder.uploadPath;
 	}
 
 	/**
@@ -216,70 +203,6 @@ public class UploadConfig {
 
 	public void setUploadPath(String uploadPath) {
 		this.uploadPath = uploadPath;
-	}
-
-	@Generated("SparkTools")
-	public static Builder builder() {
-		return new Builder();
-	}
-
-	@Generated("SparkTools")
-	public static final class Builder {
-		private String type;
-		private String baseUrl;
-		private String endpoint;
-		private String accessKey;
-		private String secretKey;
-		private String bucket;
-		private boolean addDatePath = true;
-		private String uploadPath;
-
-		private Builder() {
-		}
-
-		public Builder setType(String type) {
-			this.type = type;
-			return this;
-		}
-
-		public Builder setBaseUrl(String baseUrl) {
-			this.baseUrl = baseUrl;
-			return this;
-		}
-
-		public Builder setEndpoint(String endpoint) {
-			this.endpoint = endpoint;
-			return this;
-		}
-
-		public Builder setAccessKey(String accessKey) {
-			this.accessKey = accessKey;
-			return this;
-		}
-
-		public Builder setSecretKey(String secretKey) {
-			this.secretKey = secretKey;
-			return this;
-		}
-
-		public Builder setBucket(String bucket) {
-			this.bucket = bucket;
-			return this;
-		}
-
-		public Builder setAddDatePath(boolean addDatePath) {
-			this.addDatePath = addDatePath;
-			return this;
-		}
-
-		public Builder setUploadPath(String uploadPath) {
-			this.uploadPath = uploadPath;
-			return this;
-		}
-
-		public UploadConfig build() {
-			return new UploadConfig(this);
-		}
 	}
 
 }

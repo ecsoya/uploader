@@ -15,6 +15,9 @@ import com.github.ecsoya.uploader.util.Utility;
  */
 public abstract class AbstractFileUploader implements IFileUploader {
 
+	public AbstractFileUploader() {
+	}
+
 	/**
 	 * Upload.
 	 *

@@ -9,9 +9,10 @@
   <packaging>pom</packaging>
   <name>uploader-module-core</name>
   <modules>
-  	<module>uploader-aliyun</module>
   	<module>uploader-core</module>
+  	<module>uploader-aliyun</module>
   	<module>uploader-huawei</module>
+  	<module>uploader-tencent</module>
   	<module>uploader-local</module>
   </modules>
 </project>

@@ -20,6 +20,10 @@ import com.google.auto.service.AutoService;
 @AutoService(IFileUploader.class)
 public class AliyunFileUploader extends AbstractFileUploader {
 
+	public AliyunFileUploader() {
+		super();
+	}
+
 	/**
 	 * Test upload config.
 	 *

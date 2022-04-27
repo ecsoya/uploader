@@ -9,12 +9,7 @@
 	</parent>
 	<artifactId>uploader-core</artifactId>
 	<name>uploader-core</name>
-
 	<dependencies>
-		<!-- <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-		</dependency> -->
 		<dependency>
 			<groupId>com.google.auto.service</groupId>
 			<artifactId>auto-service</artifactId>
